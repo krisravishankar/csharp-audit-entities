@@ -19,7 +19,7 @@ namespace AuditableEntities.Web
 
             services.AddControllers();
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddHttpContextAccessor();
 
             // Register Swagger  
             services.AddSwaggerGen(c =>
