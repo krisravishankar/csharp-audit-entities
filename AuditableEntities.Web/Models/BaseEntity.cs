@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AuditableEntities.Web.Models
 {
-    public class BaseEntity<T> : IEntity
+    public abstract class BaseEntity<T> : IEntity
     {
         [Required]
         public T Id { get; set; }
@@ -11,7 +11,7 @@ namespace AuditableEntities.Web.Models
         object IEntity.Id
         {
             get { return Id; }
-            set { Id = (T)Convert.ChangeType(value, typeof(T)); }
+            set { }
         }
 
         [Required]
